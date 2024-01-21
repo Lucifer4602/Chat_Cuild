@@ -6,6 +6,7 @@ import { Button } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./SignUp.css";
 
 export const SignUp = () => {
   const [name, setName] = useState();

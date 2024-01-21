@@ -6,6 +6,7 @@ import { Button } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./LoginPage.css";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -85,9 +86,10 @@ export const LoginPage = () => {
   };
 
   return (
-    <VStack spacing="5px">
+    <VStack spacing="5px" bg="#270137">
+      <div className="Login_Page_Text">Login</div>
       <FormControl id="Login_email" isRequired>
-        <FormLabel>Email</FormLabel>
+        <FormLabel className="Login_Headings">Email</FormLabel>
         <Input
           placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
@@ -95,15 +97,22 @@ export const LoginPage = () => {
       </FormControl>
 
       <FormControl id="Login_password" isRequired>
-        <FormLabel>Password</FormLabel>
+        <FormLabel className="Login_Headings">Password</FormLabel>
         <Input
+          bg="#20002E"
           type="password"
           placeholder="Enter your password"
           onChange={(e) => setPassword(e.target.value)}
         />
       </FormControl>
 
-      <Button colorScheme="blue" onClick={submitHandler} isLoading={loading}>
+      <Button
+        color="white"
+        background="#FF4230"
+        borderRadius="0.5rem"
+        onClick={submitHandler}
+        isLoading={loading}
+      >
         Login
       </Button>
     </VStack>
