@@ -6,15 +6,18 @@ import { Button } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Checkbox } from "@chakra-ui/react";
 import "./SignUp.css";
 
 export const SignUp = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [confirmPassword, setConfirmPassword] = useState();
-  const [image, setImage] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
   const toast = useToast();
   const history = useNavigate();
 
@@ -63,6 +66,16 @@ export const SignUp = () => {
     }
   };
 
+  const showTermsToast = () => {
+    toast({
+      title: "Please Agree to Terms and Conditions",
+      status: "warning",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom",
+    });
+  };
+
   const submitHandler = async () => {
     setLoading(true);
 
@@ -90,6 +103,12 @@ export const SignUp = () => {
       return;
     }
 
+    if (!isChecked) {
+      showTermsToast();
+      setLoading(false);
+      return;
+    }
+
     try {
       const config = {
         headers: {
@@ -109,7 +128,6 @@ export const SignUp = () => {
       );
 
       console.log("Full Response:", response);
-
       console.log("Registration Successful:", response.data);
       toast({
         title: "Registration Successful",
@@ -120,7 +138,7 @@ export const SignUp = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(response.data));
       setLoading(false);
-      history("/chats");
+      history("/HomePage");
     } catch (error) {
       console.error("Error Occurred:", error);
       toast({
@@ -135,31 +153,49 @@ export const SignUp = () => {
     }
   };
 
+  const checkboxChangeHandler = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
-    <VStack spacing="5px">
+    <VStack
+      spacing="5px"
+      bg="#270137"
+      className="h-[95%] w-4/12  p-8 absolute right-32 border-4 border-Foreground-500 rounded-lg justify-items-start"
+    >
+      <div className="mt-10"></div>
+      <div className="SignUp_Head">Sign Up</div>
+      <div className="mt-1"></div>
       <FormControl id="firstName" isRequired>
-        <FormLabel>Name</FormLabel>
+        <FormLabel className="SignUp_Text">Name</FormLabel>
+
         <Input
+          bg="#20002E"
           placeholder="Enter your name"
           onChange={(e) => {
             setName(e.target.value);
           }}
         ></Input>
       </FormControl>
+      <div className="mt-1"></div>
 
       <FormControl id="email" isRequired>
-        <FormLabel>Email</FormLabel>
+        <FormLabel className="SignUp_Text">Email</FormLabel>
+
         <Input
+          bg="#20002E"
           placeholder="Enter your email"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
         ></Input>
       </FormControl>
-
+      <div className="mt-1"></div>
       <FormControl id="password" isRequired>
-        <FormLabel>Password</FormLabel>
+        <FormLabel className="SignUp_Text">Password</FormLabel>
+
         <Input
+          bg="#20002E"
           type={"password"}
           placeholder="Enter your password"
           onChange={(e) => {
@@ -167,10 +203,13 @@ export const SignUp = () => {
           }}
         ></Input>
       </FormControl>
+      <div className="mt-1"></div>
 
       <FormControl id="confirmPassword" isRequired>
-        <FormLabel>Confirm Password</FormLabel>
+        <FormLabel className="SignUp_Text">Confirm Password</FormLabel>
+
         <Input
+          bg="#20002E"
           type={"password"}
           placeholder="Confirm your password"
           onChange={(e) => {
@@ -178,10 +217,12 @@ export const SignUp = () => {
           }}
         ></Input>
       </FormControl>
+      <div className="mt-1"></div>
+      <FormControl id="image">
+        <FormLabel className="SignUp_Text">Upload Your Image</FormLabel>
 
-      <FormControl id="image" isRequired>
-        <FormLabel>Upload Your Image</FormLabel>
         <Input
+          bg="#20002E"
           type={"file"}
           p={1.5}
           accept="image/*"
@@ -189,8 +230,29 @@ export const SignUp = () => {
             postDetails(e.target.files[0]);
           }}
         ></Input>
+        <div className="mt-2"></div>
+        <Checkbox
+          colorScheme="blue"
+          isRequired
+          className="SignUp_Text space-x-2"
+          isChecked={isChecked}
+          onChange={checkboxChangeHandler}
+        >
+          I, hereby agree to the cUILD’s terms & conditions and, privacy policy,
+          as specified <span className="HERE">here</span>
+        </Checkbox>
       </FormControl>
-      <Button colorScheme="blue" onClick={submitHandler} isLoading={loading}>
+      <div className="mt-2"></div>
+      <Button
+        color="white"
+        background="#FF4230"
+        borderRadius="0.5rem"
+        onClick={() => {
+          isChecked ? submitHandler() : showTermsToast();
+        }}
+        isLoading={loading}
+        isDisabled={!isChecked}
+      >
         Sign Up
       </Button>
     </VStack>

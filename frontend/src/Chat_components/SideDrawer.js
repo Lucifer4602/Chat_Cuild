@@ -23,11 +23,11 @@ import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar } from "@chakra-ui/avatar";
 import axios from "axios";
 import { useToast } from "@chakra-ui/toast";
-import ChatLoading from "../Assets/ChatLoading";
+import ChatLoading from "./ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
-import ProfileModal from "../Assets/ProfileModal";
-import { getSender } from "../Assets/ChatLogics";
-import UserListItem from "../Assets/UserListItem";
+import ProfileModal from "./ProfileModal";
+import { getSender } from "./ChatLogics";
+import UserListItem from "./UserListItem";
 import { ChatState } from "../context/ChatProvider";
 import { useNavigate } from "react-router-dom";
 

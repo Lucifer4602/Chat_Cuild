@@ -58,7 +58,7 @@ export const LoginPage = () => {
         setLoading(false);
 
         // Use navigate instead of history
-        navigate("/chats");
+        navigate("/HomePage");
       } else {
         // Handle the case when response.data is undefined or falsy
         toast({
@@ -86,16 +86,22 @@ export const LoginPage = () => {
   };
 
   return (
-    <VStack spacing="5px" bg="#270137">
+    <VStack
+      spacing="5px"
+      bg="#270137"
+      className="h-3/4 w-4/12  p-8 absolute  bottom-0 left-64 border-4 border-Foreground-500 rounded-lg"
+    >
       <div className="Login_Page_Text">Login</div>
+      <div className="mt-2"></div>
       <FormControl id="Login_email" isRequired>
         <FormLabel className="Login_Headings">Email</FormLabel>
         <Input
+          bg="#20002E"
           placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
-
+      <div className="mt-2"></div>
       <FormControl id="Login_password" isRequired>
         <FormLabel className="Login_Headings">Password</FormLabel>
         <Input
@@ -106,6 +112,8 @@ export const LoginPage = () => {
         />
       </FormControl>
 
+      <p className="Forget translate-x-full">forgot password?</p>
+      <div className="mt-6"></div>
       <Button
         color="white"
         background="#FF4230"
@@ -115,6 +123,29 @@ export const LoginPage = () => {
       >
         Login
       </Button>
+      <div className="mt-6"></div>
+      <p className="OR">OR</p>
+      <div className="mt-6"></div>
+
+      <div className="flex gap-8 justify-center">
+        <button>
+          <img
+            src="https://res.cloudinary.com/dgsmzzoph/image/upload/v1705851487/iy0usrwsjrnqpebrehfz.png"
+            className="GOOGLE"
+            alt="hello this is me"
+          ></img>
+        </button>
+
+        <button>
+          <img
+            src="https://res.cloudinary.com/dgsmzzoph/image/upload/v1705851669/svgkvereuhf8rsrgwpqo.png"
+            alt="hello this is me"
+            className="GITHUB"
+          ></img>
+        </button>
+      </div>
+
+      <div className="mb-8"></div>
     </VStack>
   );
 };

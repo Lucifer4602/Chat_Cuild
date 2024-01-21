@@ -1,14 +1,16 @@
 // import logo from './logo.svg';
 import "./App.css";
-import { Chat } from "./components/Chat";
+import { Chat } from "./Pages/Chat";
 import { Route, Routes } from "react-router-dom";
-import { HomePage } from "./components/HomePage";
+import { RegistrationPage } from "./Pages/Registration";
+import HomePage from "./Pages/HomePage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" Component={HomePage}></Route>
+        <Route path="/" Component={RegistrationPage}></Route>
+        <Route path="/HomePage" Component={HomePage}></Route>
         <Route path="/chats" Component={Chat} />
       </Routes>
     </div>
