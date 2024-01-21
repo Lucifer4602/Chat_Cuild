@@ -1,0 +1,49 @@
+#project_card {
+  position: relative;
+  background: linear-gradient(#1c0029, #2e023f);
+  height: 280px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow: black;
+  margin: 10px;
+}
+#project_card > h3 {
+}
+#project_card > p {
+  font-size: 10px;
+  padding: 10px 0px;
+}
+
+#tech_tags {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#readMoreDiv {
+  display: flex;
+  justify-content: space-between;
+}
+#readMoreDiv > span {
+  font-size: 10px;
+}
+#card_bottomDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#project_details {
+  font-size: 8px;
+  text-wrap: nowrap;
+}
+#bottom_tags {
+  padding: 20px 0px;
+}
+#card_CircularDiv {
+  height: 40px;
+  width: 40px;
+  background: #eb3b2e;
+  border-radius: 50%;
+}

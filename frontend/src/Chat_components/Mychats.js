@@ -3,9 +3,9 @@ import { Box, Stack, Text } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { getSender } from "../Assets/ChatLogics";
-import ChatLoading from "../Assets/ChatLoading";
-import GroupChat from "../Assets/GroupChat";
+import { getSender } from "./ChatLogics";
+import ChatLoading from "./ChatLoading";
+import GroupChat from "./GroupChat";
 import { Button } from "@chakra-ui/react";
 import { ChatState } from "../context/ChatProvider";
 

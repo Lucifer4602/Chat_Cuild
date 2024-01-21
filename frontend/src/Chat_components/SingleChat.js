@@ -3,17 +3,16 @@ import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
 import "./styles.css";
 import { IconButton, Spinner, useToast } from "@chakra-ui/react";
-import { getSender, getSenderFull } from "../Assets/ChatLogics";
+import { getSender, getSenderFull } from "./ChatLogics";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import ProfileModal from "../Assets/ProfileModal";
-import ScrollableChat from "../Assets/ScrollableChat";
+import ProfileModal from "./ProfileModal";
+import ScrollableChat from "./ScrollableChat";
 import Lottie from "react-lottie";
-import animationData from "../Assets/typing.json";
-
+import animationData from "./typing.json";
 import io from "socket.io-client";
-import UpdateGroupChatModal from "../Assets/UpdateGropuChatModal";
+import UpdateGroupChatModal from "./UpdateGropuChatModal";
 import { ChatState } from "../context/ChatProvider";
 const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
