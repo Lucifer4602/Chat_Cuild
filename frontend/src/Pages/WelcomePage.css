@@ -4,6 +4,23 @@
     overflow: hidden;
 }
 
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 60px;
+    background-color: #f8f8f2;
+    animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+}
+
 #main>h1 {
     padding: 10px;
     color: #FFF;
@@ -16,6 +33,7 @@
 }
 
 #innerFrame {
+    position: relative;
     display: flex;
     background: #2D0040;
     padding: 40px;
@@ -35,6 +53,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 108px;
+    width: 400px;
 }
 
 #leftSideDiv>p {
@@ -44,16 +63,26 @@ font-size: 20px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
+width: 372px;
+}
+#leftSideDiv>p>span{
+    display: block;
+    font-family: "IBM Plex Mono";
 }
 
 #btnDiv{
     width: 200px;
     display: flex;
+    padding-top: 10px;
+}
+#rightSideDiv{
+    position: relative;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    width: 100%;
 }
 #rightSideDiv>img{
 width: 400px;
-height: 400px;
 transform: rotate(-62.013deg);
-
 }
