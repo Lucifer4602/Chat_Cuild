@@ -59,11 +59,12 @@
 #leftSideDiv>p {
 color: #FFF;
 font-family: "IBM Plex Mono";
-font-size: 20px;
+font-size: 18px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-width: 372px;
+width: 370px;
+padding: 10px;
 }
 #leftSideDiv>p>span{
     display: block;
