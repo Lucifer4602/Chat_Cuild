@@ -63,8 +63,9 @@ font-size: 18px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-width: 370px;
 padding: 10px;
+width: 372px;
+
 }
 #leftSideDiv>p>span{
     display: block;
