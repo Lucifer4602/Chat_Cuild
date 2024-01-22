@@ -161,9 +161,9 @@ export const SignUp = () => {
     <VStack
       spacing="5px"
       bg="#270137"
-      className="h-[95%] w-4/12  p-8 absolute right-32 border-4 border-Foreground-500 rounded-lg justify-items-start"
+      className="p-8 w-96 justify-start  h-[95%]  border-4 border-Foreground-500 rounded-lg  overflow-scroll signup"
     >
-      <div className="mt-10"></div>
+      <div className="mt-4"></div>
       <div className="SignUp_Head">Sign Up</div>
       <div className="mt-1"></div>
       <FormControl id="firstName" isRequired>
@@ -255,6 +255,7 @@ export const SignUp = () => {
       >
         Sign Up
       </Button>
+      <div className="mb-2"></div>
     </VStack>
   );
 };

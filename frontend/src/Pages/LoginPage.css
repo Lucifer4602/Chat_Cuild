@@ -45,3 +45,7 @@
   height: 2.75rem;
   flex-shrink: 0;
 }
+
+.Login::-webkit-scrollbar {
+  display: none;
+}

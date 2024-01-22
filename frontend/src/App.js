@@ -15,9 +15,9 @@ function App() {
         <Route path="/HomePage" Component={HomePage}></Route>
         <Route path="/chats" Component={Chat} />
         <Route path="/" Component={WelcomePage}/>
+
         {/* <Route path= "/" Component={ProfilePage}></Route> */}
       </Routes>
-
     </div>
   );
 }

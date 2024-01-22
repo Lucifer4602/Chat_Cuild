@@ -89,8 +89,9 @@ export const LoginPage = () => {
     <VStack
       spacing="5px"
       bg="#270137"
-      className="h-3/4 w-4/12  p-8 absolute  bottom-0 left-64 border-4 border-Foreground-500 rounded-lg"
+      className="p-8 w-96  border-4 border-Foreground-500 rounded-lg overflow-y-scroll Login "
     >
+      <div className="mt-4"> </div>
       <div className="Login_Page_Text">Login</div>
       <div className="mt-2"></div>
       <FormControl id="Login_email" isRequired>
@@ -145,7 +146,7 @@ export const LoginPage = () => {
         </button>
       </div>
 
-      <div className="mb-8"></div>
+      <div className="mb-2"></div>
     </VStack>
   );
 };

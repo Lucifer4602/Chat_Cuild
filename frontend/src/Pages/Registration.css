@@ -7,3 +7,6 @@
   font-weight: 700;
   line-height: normal;
 }
+.Register::-webkit-scrollbar {
+  display: none;
+}
