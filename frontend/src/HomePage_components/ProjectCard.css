@@ -11,8 +11,8 @@
 }
 #project_card > h3 {
 }
-#project_card > p {
-  font-size: 10px;
+#project_card>p{
+  font-size: 8px;
   padding: 10px 0px;
 }
 
@@ -39,8 +39,9 @@
   text-wrap: nowrap;
 }
 #bottom_tags {
-  padding: 20px 0px;
+  padding: 10px 0px;
 }
+
 #card_CircularDiv {
   height: 40px;
   width: 40px;

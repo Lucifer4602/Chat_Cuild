@@ -8,8 +8,8 @@ const ColorTag = (Props) => {
         background: `${Props.color}`,
         borderRadius: "8px",
         padding: "3px 5px",
-        fontSize: "8px",
-        margin: "5px 3px",
+        fontSize: "6px",
+        margin: "2px 3px",
       }}
     >
       {Props.text}

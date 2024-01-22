@@ -1,19 +1,19 @@
 import React from "react";
-// import Color from "../assets/colors";
+import './ColorButton.css'
+import { Divider } from "@chakra-ui/react";
 export const ColorButton = (Props) => {
   return (
-    <button
+    
+      <button
       id="color_btn"
       style={{
         background: `${Props.color}`,
-        borderRadius: "8px",
-        padding: "3px 5px",
-        fontSize: "10px",
-        margin: "5px 3px",
-        border: "0px",
+        fontSize: `${Props.fontSize}`,
       }}
     >
-      {Props.text}
+      <h6>{Props.text}</h6>
+      <div id="backgroundAppear"></div>
     </button>
+
   );
 };
