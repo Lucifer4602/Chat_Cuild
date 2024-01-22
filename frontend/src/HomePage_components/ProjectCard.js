@@ -2,11 +2,12 @@ import React from "react";
 import "./ProjectCard.css";
 import ColorTag from "./ColorTag";
 import Color from "../assets/colors";
+import { ColorButton } from "./ColorButton";
 
 const ProjectCard = (Props) => {
   return (
     <div id="project_card">
-      <h3 id="project_name">Project Name</h3>
+      <h3 id="project_name">{Props.name}</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, a
         eveniet assumenda minima ipsam cupiditate laudantium reiciendis
@@ -41,8 +42,8 @@ const ProjectCard = (Props) => {
             <span> April 30,2024</span>
           </div>
           <div id="bottom_tags">
-            <ColorTag color={Color.oragne} text="interested" />
-            <ColorTag color={Color.dark_green} text="Save for Later" />
+            <ColorButton color={Color.oragne} text="interested"  fontSize = '7px'/>
+            <ColorButton color={Color.dark_green} text="Save for Later" fontSize = '7px'/>
           </div>
         </div>
         <div id="card_CircularDiv"></div>

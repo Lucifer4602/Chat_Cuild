@@ -4,6 +4,8 @@ import { Chat } from "./Pages/Chat";
 import { Route, Routes } from "react-router-dom";
 import { RegistrationPage } from "./Pages/Registration";
 import HomePage from "./Pages/HomePage";
+import { ProfilePage } from "./Pages/ProfilePage";
+import { WelcomePage } from "./Pages/WelcomePage";
 
 function App() {
   return (
@@ -12,7 +14,10 @@ function App() {
         <Route path="/" Component={RegistrationPage}></Route>
         <Route path="/HomePage" Component={HomePage}></Route>
         <Route path="/chats" Component={Chat} />
+        <Route path="/Welcome" Component={WelcomePage}/>
+        {/* <Route path= "/" Component={ProfilePage}></Route> */}
       </Routes>
+
     </div>
   );
 }
