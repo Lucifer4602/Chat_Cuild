@@ -14,10 +14,9 @@ function App() {
         <Route path="/" Component={RegistrationPage}></Route>
         <Route path="/HomePage" Component={HomePage}></Route>
         <Route path="/chats" Component={Chat} />
-        <Route path="/Welcome" Component={WelcomePage}/>
+        <Route path="/Welcome" Component={WelcomePage} />
         {/* <Route path= "/" Component={ProfilePage}></Route> */}
       </Routes>
-
     </div>
   );
 }

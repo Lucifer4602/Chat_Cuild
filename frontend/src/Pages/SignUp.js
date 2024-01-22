@@ -161,7 +161,7 @@ export const SignUp = () => {
     <VStack
       spacing="5px"
       bg="#270137"
-      className="h-[95%] w-4/12  p-8 absolute right-32 border-4 border-Foreground-500 rounded-lg justify-items-start"
+      className="p-8 w-96 border-4 border-Foreground-500 rounded-lg justify-items-start"
     >
       <div className="mt-10"></div>
       <div className="SignUp_Head">Sign Up</div>

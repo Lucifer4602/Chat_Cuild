@@ -8,12 +8,18 @@ export const RegistrationPage = () => {
   return (
     <div
       className="bg-Background-500 h-screen w-screen
-     box-border overflow-hidden relative"
+     box-border overflow-hidden  flex flex-row justify-evenly fixed"
     >
-      <Text className="Name_app absolute left-14 top-14 ">cUILD</Text>
+      <div className=" mt-16">
+        <Text className="Name_app ">cUILD</Text>
+      </div>
 
-      <LoginPage />
-      <SignUp />
+      <div className="flex flex-col justify-end ">
+        <LoginPage></LoginPage>
+      </div>
+      <div className="flex flex-col justify-start">
+        <SignUp />
+      </div>
     </div>
   );
 };
