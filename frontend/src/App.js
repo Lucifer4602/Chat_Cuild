@@ -11,11 +11,18 @@ function App() {
   return (
     <div className="App">
       <Routes>
+<<<<<<< Updated upstream
         <Route path="/LoginPage" Component={RegistrationPage}></Route>
         <Route path="/HomePage" Component={HomePage}></Route>
         <Route path="/chats" Component={Chat} />
         <Route path="/" Component={WelcomePage}/>
 
+=======
+        <Route path="/RegistrationPage" Component={RegistrationPage}></Route>
+        <Route path="/HomePage" Component={HomePage}></Route>
+        <Route path="/chats" Component={Chat} />
+        <Route path="/" Component={WelcomePage} />
+>>>>>>> Stashed changes
         {/* <Route path= "/" Component={ProfilePage}></Route> */}
       </Routes>
     </div>
