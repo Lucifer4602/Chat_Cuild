@@ -6,19 +6,14 @@ import Color from "../assets/colors";
 import { NavBar } from "../HomePage_components/NavBar";
 import ProjectData from "../Data_Files/ProjectsData";
 
-function create_ProjectCard(Project){
-  return <ProjectCard
-  name = {Project.name}
-  />
+function create_ProjectCard(Project) {
+  return <ProjectCard name={Project.name} />;
 }
 
-
 const HomePage = () => {
-
-
   return (
     <div id="main">
-      <NavBar/>
+      <NavBar />
       <div id="page1">
         <div id="filterContainer">
           <h2>Filters</h2>
@@ -32,15 +27,29 @@ const HomePage = () => {
               <span>
                 <h4>Sort By</h4>
               </span>
-              <ColorButton text="Relevance" color={Color.yellowish} fontSize = '10px'/>
-              <ColorButton text="Alphabetical" color={Color.light_brown} fontSize = '10px'/>
-              <ColorButton text="Due date" color={Color.light_brown} fontSize = '10px' />
-              <ColorButton text="Popularity" color={Color.light_brown} fontSize = '10px' />
+              <ColorButton
+                text="Relevance"
+                color={Color.yellowish}
+                fontSize="10px"
+              />
+              <ColorButton
+                text="Alphabetical"
+                color={Color.light_brown}
+                fontSize="10px"
+              />
+              <ColorButton
+                text="Due date"
+                color={Color.light_brown}
+                fontSize="10px"
+              />
+              <ColorButton
+                text="Popularity"
+                color={Color.light_brown}
+                fontSize="10px"
+              />
             </div>
           </div>
-          <div id="projectsScroll">
-            {ProjectData.map(create_ProjectCard)}
-          </div>
+          <div id="projectsScroll">{ProjectData.map(create_ProjectCard)}</div>
         </div>
         <div id="yourProjectContainer">
           <h2>Your Projects</h2>
