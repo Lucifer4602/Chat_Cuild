@@ -19,3 +19,7 @@
 .HERE {
   color: lightskyblue;
 }
+
+.signup::-webkit-scrollbar {
+  display: none;
+}
